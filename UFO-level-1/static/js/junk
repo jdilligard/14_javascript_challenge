@@ -1,0 +1,70 @@
+
+function createHTML(tableData) {
+    //remove child elements
+    // $('#data').empty();
+
+    var i;
+
+    $('#ufo-table tbody').empty();
+    for (i = 0; i < tableData.length; i++) {
+        let site = tableData[i];
+        let html = `<tr>
+                        <td>${site.datetime}</td>
+                        <td>${site.city}</td>
+                        <td>${site.state}</td>
+                        <td>${site.country}</td>
+                        <td>${site.shape}</td>
+                        <td>${site.durationMinutes}</td>
+                        <td>${site.comments}</td>
+                      
+                    </tr>`;
+        $('#ufo-table').append(html);
+    }
+}
+
+
+
+
+function updateSite() {
+    // Use D3 to select the dropdown menu
+
+    console.log('IM in updateSite');
+
+    //var dropdownMenu = $("#selDataset");
+
+
+    try {
+        var dataset = $("#mysel option:selected").val();
+        console.log(dataset);
+        console.log('it worked')
+    } catch (err) {
+        console.log('it didnt work')
+        console.log(err)
+    }
+
+
+    // Assign the value of the dropdown menu option to a variable
+    // Initialize x and y arrays
+
+    if (dataset === 'date') {
+        console.log('IM date');
+
+    }
+
+    if (dataset === 'city') {
+        console.log('IM city');
+
+
+    }
+
+    if (dataset === 'state') {
+        console.log('IM state');
+
+    }
+    if (dataset === 'country') {
+        console.log('IM country');
+
+    }
+    // Note the extra brackets around 'x' and 'y'
+    // Plotly.restyle("plot", "labels", [labels]);
+} // Plotly.restyle("plot", "labels", [labels]);
